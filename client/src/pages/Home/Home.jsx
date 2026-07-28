@@ -1,25 +1,26 @@
-import React from "react";
-import Navbar from "../../layout/Navbar";
-import Footer from "../../layout/Footer";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
 
       <main>
-        <h2>Practice. Improve. Speak With Confidence.</h2>
+        <section className="hero">
+          <h1>Practice. Improve. Speak With Confidence.</h1>
 
-        <p>
-          AI-powered platform for interview preparation and daily speaking
-          practice.
-        </p>
+          <p>
+            AI-powered platform for interview preparation and daily speaking
+            practice.
+          </p>
 
-        <button>Start Practicing</button>
+          <button>Start Practicing</button>
+        </section>
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 };
 
