@@ -5,6 +5,8 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,13 +21,28 @@ const Navbar = () => {
       </button>
 
       <ul className={`nav-links ${menuOpen ? "menu-open" : ""}`}>
-        <li onClick={() => setMenuOpen(false)}>Home</li>
-        <li onClick={() => setMenuOpen(false)}>Features</li>
-        <li onClick={() => setMenuOpen(false)}>About</li>
-        <li onClick={() => setMenuOpen(false)}>Contact</li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/">Home</Link>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/features">Features</Link>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/about">About</Link>
+        </li>
+        <li onClick={() => setMenuOpen(false)}>
+          <Link to="/contact">Contact</Link>
+        </li>
       </ul>
 
-      <button className="navbar-btn">Get Started</button>
+      <div className="auth-buttons">
+        <Link to="/signup" className="navbar-btn">
+          SignUp
+        </Link>
+        <Link to="/signin" className="navbar-btn">
+          SignIn
+        </Link>
+      </div>
     </nav>
   );
 };
